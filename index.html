@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Node Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-heading">Node Weather App</h1>
+      <div class="box">
+        <div class="icon"></div>
+        <div class="desc">
+          <h2 class="main-desc">Cloudy</h2>
+          <p class="description">Clear Sky</p>
+        </div>
+        <div class="city">
+          <h2 class="city-name">Ukkali, IN</h2>
+          <p id="date">LOADING DATE and TIME</p>
+        </div>
+        <div class="temp-details">
+          <p>Temperature</p>
+          <p>Pressure</p>
+          <p>Humidity</p>
+          <p>Wind Speed</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // DOM MANIPULATION to get current Date Time and Month
+      const date = document.getElementById('date')
+
+      const getDay = () => {
+        // DAY and TIME
+        const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY']
+        const currentDay = new Date()
+        const day = currentDay.getDay()
+        var hours = currentDay.getHours()
+        var mins = currentDay.getMinutes()
+        var period = 'AM'
+        if (hours > 11) {
+          period = 'PM'
+          if (hours > 12) {
+            hours -= 12
+          }
+        }
+        if (mins < 10) {
+          mins = '0' + mins
+        }
+
+        // MONTH
+        const currentMonth = new Date()
+        const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC']
+        const month = currentMonth.getMonth()
+        const todaysDate = currentMonth.getDate()
+
+        date.innerText = `${days[day]} | ${months[month]} ${todaysDate} | ${hours}:${mins} ${period}`
+      }
+
+      getDay()
+    </script>
+  </body>
+</html>
