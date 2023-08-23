@@ -1,15 +1,14 @@
 {
-  "dependencies": {
-    "requests": "^0.3.0"
-  },
   "name": "nodeweatherapp",
   "version": "1.0.0",
   "description": "\"Weather App using Node JS\"",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "requests": "^0.3.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "SAMEER",
+  "author": "26Sameer",
   "license": "ISC"
 }
